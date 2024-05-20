@@ -9,6 +9,7 @@ class LightTime {
   final Color scaffoldColor = AppColors.white;
   final Color textDisabledColor = AppColors.black[500]!;
   final Color textSolidColor = AppColors.black;
+  final Color borderColor = AppColors.white[500]!;
 
   TextTheme get textTheme => TextTheme(
         headlineLarge: TextStyle(
@@ -53,6 +54,17 @@ class LightTime {
         ),
       );
 
+  CardTheme get cardTheme => CardTheme(
+    elevation: 0,
+    margin: EdgeInsets.zero,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(Dimens.dp8),
+      side: BorderSide(color: borderColor),
+    ),
+  );
+
+  AppBarTheme get appBarTheme => const AppBarTheme(centerTitle: false);
+
   ThemeData get theme {
     return ThemeData(
       colorScheme: ColorScheme.light(
@@ -64,6 +76,8 @@ class LightTime {
       useMaterial3: true,
       fontFamily: 'Poppins',
       textTheme: textTheme,
+      appBarTheme: appBarTheme,
+      cardTheme: cardTheme, 
     );
   }
 }
