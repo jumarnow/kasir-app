@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:kasirsuper/core/core.dart';
 
 class LightTime {
@@ -63,7 +64,24 @@ class LightTime {
     ),
   );
 
+
   AppBarTheme get appBarTheme => const AppBarTheme(centerTitle: false);
+  
+  BottomNavigationBarThemeData get bottomNavigationBarTheme {
+    return BottomNavigationBarThemeData(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: primaryColor,
+        unselectedItemColor: textDisabledColor,
+        selectedLabelStyle: textTheme.labelMedium?.copyWith(
+          fontSize: Dimens.dp10,
+          color: primaryColor,
+        ),
+        unselectedLabelStyle: textTheme.labelMedium?.copyWith(
+          fontSize: Dimens.dp10,
+          color: textDisabledColor,
+        ),
+      );
+  }
 
   ThemeData get theme {
     return ThemeData(
@@ -78,6 +96,7 @@ class LightTime {
       textTheme: textTheme,
       appBarTheme: appBarTheme,
       cardTheme: cardTheme, 
+      bottomNavigationBarTheme: bottomNavigationBarTheme,
     );
   }
 }

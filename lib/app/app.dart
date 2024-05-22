@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: routes,
       routes: {
         '/home': (context) {
-          return const HomePage();
+          return const MainPage();
         },
       },
     );

@@ -1,4 +1,4 @@
-part of '../main.dart';
+part of '../page.dart';
 
 class _CardSection extends StatelessWidget {
   const _CardSection({
@@ -13,14 +13,14 @@ class _CardSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: EdgeInsets.all(Dimens.dp24),
+        padding: const EdgeInsets.all(Dimens.dp24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             RegularText(title),
             Dimens.dp4.height,
             HeadlineText(value,
-              style: TextStyle(fontSize: Dimens.dp24),
+              style: const TextStyle(fontSize: Dimens.dp24),
             ),
             Dimens.dp4.height,
             RegularText.semiBold(
