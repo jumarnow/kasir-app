@@ -65,7 +65,10 @@ class LightTime {
   );
 
 
-  AppBarTheme get appBarTheme => const AppBarTheme(centerTitle: false);
+  AppBarTheme get appBarTheme => AppBarTheme(
+    centerTitle: false,
+    surfaceTintColor: scaffoldColor
+  );
   
   BottomNavigationBarThemeData get bottomNavigationBarTheme {
     return BottomNavigationBarThemeData(
