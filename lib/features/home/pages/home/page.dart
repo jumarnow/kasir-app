@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         title: const Text('Beranda'),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(Dimens.defaultSize),
+        padding: const EdgeInsets.all(Dimens.defaultSize),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

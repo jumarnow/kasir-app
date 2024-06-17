@@ -1,9 +1,7 @@
 part of '../page.dart';
 
 class _ItemSection extends StatelessWidget {
-  const _ItemSection({
-    super.key,
-  });
+  const _ItemSection();
 
   @override
   Widget build(BuildContext context) {
@@ -33,15 +31,16 @@ class _ItemSection extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: ElevatedButton(
+                child: OutlinedButton(
                   onPressed: () {},
-                  child: Text('Edit'),
+                  child: const Text('Edit'),
                 ),
               ),
+              Dimens.dp16.width,
               Expanded(
                 child: OutlinedButton(
                   onPressed: () {},
-                  child: Text('Delete'),
+                  child: const Text('Delete'),
                 ),
               ),
             ],

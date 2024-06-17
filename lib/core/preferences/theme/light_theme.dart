@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:kasirsuper/core/core.dart';
 
 class LightTime {
@@ -8,9 +7,10 @@ class LightTime {
 
   final Color errorColor = AppColors.red;
   final Color scaffoldColor = AppColors.white;
-  final Color textDisabledColor = AppColors.black[500]!;
+  final Color textDisabledColor = AppColors.black[400]!;
   final Color textSolidColor = AppColors.black;
   final Color borderColor = AppColors.white[500]!;
+  final Color inputColor = AppColors.white[400]!;
 
   TextTheme get textTheme => TextTheme(
         headlineLarge: TextStyle(
@@ -86,6 +86,67 @@ class LightTime {
       );
   }
 
+  ElevatedButtonThemeData get elevatedButtonTheme {
+    return ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: primaryColor,
+          foregroundColor: scaffoldColor,
+          textStyle: textTheme.titleMedium,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(Dimens.dp8),
+          ),
+        ),
+      );
+  }
+
+  OutlinedButtonThemeData get outlinedButtonTheme {
+    return OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          foregroundColor: primaryColor,
+          textStyle: textTheme.titleMedium,
+          side: BorderSide(color: primaryColor),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(Dimens.dp8),
+          ),
+        ),
+    );
+  }
+
+  InputDecorationTheme get inputDecorationTheme {
+    return InputDecorationTheme(
+        fillColor: inputColor,
+        filled: true,
+        hintStyle: textTheme.labelMedium,
+        prefixIconColor: textDisabledColor,
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(Dimens.dp8),
+          borderSide: BorderSide(color: inputColor),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(Dimens.dp8),
+          borderSide: BorderSide(color: inputColor),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(Dimens.dp8),
+          borderSide: BorderSide(
+            color: primaryColor,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(Dimens.dp8),
+          borderSide: BorderSide(
+            color: errorColor,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(Dimens.dp8),
+          borderSide: BorderSide(
+            color: errorColor,
+          ),
+        ),
+      );
+  }
+
   ThemeData get theme {
     return ThemeData(
       colorScheme: ColorScheme.light(
@@ -100,6 +161,9 @@ class LightTime {
       appBarTheme: appBarTheme,
       cardTheme: cardTheme, 
       bottomNavigationBarTheme: bottomNavigationBarTheme,
+      elevatedButtonTheme: elevatedButtonTheme,
+      outlinedButtonTheme: outlinedButtonTheme,
+      inputDecorationTheme: inputDecorationTheme,
     );
   }
 }

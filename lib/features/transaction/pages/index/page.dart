@@ -29,9 +29,7 @@ class TransactionPage extends StatelessWidget {
 }
 
 class _buildContainer extends StatelessWidget {
-  const _buildContainer({
-    super.key,
-  });
+  const _buildContainer();
 
   @override
   Widget build(BuildContext context) {
