@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kasirsuper/core/core.dart';
 
-import 'regular_input.dart';
 
 class SearchTextInput extends StatelessWidget {
   const SearchTextInput({

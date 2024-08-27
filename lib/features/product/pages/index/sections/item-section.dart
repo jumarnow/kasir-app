@@ -1,3 +1,4 @@
+// ignore: file_names
 part of '../page.dart';
 
 class _ItemSection extends StatelessWidget {
@@ -13,10 +14,11 @@ class _ItemSection extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(Dimens.dp8),
-                child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYw9VnAJ0kwdAIfioIwBSutjqwtbXz_3thmMq7cExoivh4JlTd',
-                width: 74,
-                height: 74,
-                fit: BoxFit.cover,
+                child: Image.network(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYw9VnAJ0kwdAIfioIwBSutjqwtbXz_3thmMq7cExoivh4JlTd',
+                  width: 74,
+                  height: 74,
+                  fit: BoxFit.cover,
                 ),
               ),
               Dimens.dp12.width,

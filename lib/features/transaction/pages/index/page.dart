@@ -28,6 +28,7 @@ class TransactionPage extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class _buildContainer extends StatelessWidget {
   const _buildContainer();
 

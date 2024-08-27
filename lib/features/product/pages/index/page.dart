@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kasirsuper/core/core.dart';
-import 'package:kasirsuper/core/preferences/icons.dart';
 part 'sections/item-section.dart';
 
 class ProductPage extends StatelessWidget {
@@ -69,7 +68,7 @@ class RegularTextInput extends StatelessWidget {
       minLines: minLines,
       maxLength: maxLength,
       decoration: InputDecoration(
-        prefixIcon: Icon(AppIcons.search),
+        prefixIcon: const Icon(AppIcons.search),
         hintText: hintText,
       ),
     );
