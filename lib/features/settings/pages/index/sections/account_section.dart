@@ -1,4 +1,3 @@
-
 part of '../page.dart';
 
 class _AccountSection extends StatelessWidget {
@@ -14,7 +13,9 @@ class _AccountSection extends StatelessWidget {
         ItemMenuSettings(
           title: 'Informasi Usaha',
           icon: AppIcons.receipt,
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, ProfilePage.routeName);
+          },
         ),
         const ItemMenuSettings(
           title: 'API Key Xendit',

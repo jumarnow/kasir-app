@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kasirsuper/core/core.dart';
 import 'package:kasirsuper/features/settings/settings.dart';
+
+import '../profile/page.dart';
 part 'sections/profile_section.dart';
 part 'sections/other_section.dart';
 part 'sections/device_section.dart';
 part 'sections/account_section.dart';
-
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -50,4 +52,3 @@ class SettingsPage extends StatelessWidget {
     );
   }
 }
-

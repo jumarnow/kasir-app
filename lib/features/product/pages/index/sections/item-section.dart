@@ -1,4 +1,3 @@
-// ignore: file_names
 part of '../page.dart';
 
 class _ItemSection extends StatelessWidget {

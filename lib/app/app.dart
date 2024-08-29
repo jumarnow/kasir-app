@@ -13,8 +13,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => BottomNavBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => BottomNavBloc()),
+        BlocProvider(
+            create: (context) => ProfileBloc()..add(GetProfileEvent())),
+      ],
       child: MaterialApp(
         title: 'Kasir SUPER',
         theme: LightTime(AppColors.green).theme,

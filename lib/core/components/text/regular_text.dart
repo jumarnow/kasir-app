@@ -8,15 +8,20 @@ class RegularText extends StatelessWidget {
   final TextStyle? style;
   final TextAlign? textAlign;
 
-  factory RegularText.medium(String text, {TextStyle? style, TextAlign? textAlign}) {
+  factory RegularText.medium(String text,
+      {TextStyle? style, TextAlign? textAlign}) {
     return RegularText(
       text,
-      style: const TextStyle(fontWeight: FontWeight.w500).merge(style),
+      style: const TextStyle(
+        fontWeight: FontWeight.w500,
+        color: AppColors.black,
+      ).merge(style),
       textAlign: textAlign,
     );
   }
 
-  factory RegularText.semiBold(String text, {TextStyle? style, TextAlign? textAlign}) {
+  factory RegularText.semiBold(String text,
+      {TextStyle? style, TextAlign? textAlign}) {
     return RegularText(
       text,
       style: const TextStyle(fontWeight: FontWeight.w600).merge(style),
@@ -27,10 +32,6 @@ class RegularText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final baseStyle = context.theme.textTheme.bodyMedium;
-    return Text(
-      text,
-      style: baseStyle?.merge(style),
-      textAlign: textAlign
-    );
+    return Text(text, style: baseStyle?.merge(style), textAlign: textAlign);
   }
 }
