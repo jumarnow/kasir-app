@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Kasir SUPER',
-        theme: LightTime(AppColors.green).theme,
+        theme: LightTheme(AppColors.green).theme,
         debugShowCheckedModeBanner: false,
         home: const SplashPage(),
         onGenerateRoute: routes,

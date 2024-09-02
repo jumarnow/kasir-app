@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:kasirsuper/core/core.dart';
 import 'package:kasirsuper/core/data/enums/status_enum.dart';
 import 'package:kasirsuper/features/settings/settings.dart';
 
@@ -35,14 +36,14 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         emit(state.copyWith(status: Status.failure, error: e.toString()));
       }
     });
-    // on<GetImageProfileEvent>((event, emit) async {
-    //   try {
-    //     final picker = await ImageHelper.getImage();
+    on<GetImageProfileEvent>((event, emit) async {
+      try {
+        final picker = await ImageHelper.getImage();
 
-    //     emit(state.copyWith(image: picker));
-    //   } catch (e) {
-    //     emit(state.copyWith(status: Status.failure, error: e.toString()));
-    //   }
-    // });
+        emit(state.copyWith(image: picker));
+      } catch (e) {
+        emit(state.copyWith(status: Status.failure, error: e.toString()));
+      }
+    });
   }
 }

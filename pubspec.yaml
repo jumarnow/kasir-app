@@ -41,6 +41,7 @@ dependencies:
   json_serializable: ^6.8.0
   build_runner: ^2.4.11
   shared_preferences: ^2.3.2
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:

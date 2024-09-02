@@ -11,11 +11,23 @@ class _ProfileSection extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(Dimens.dp50),
-                child: Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYw9VnAJ0kwdAIfioIwBSutjqwtbXz_3thmMq7cExoivh4JlTd',
-                  width: 64,
-                  height: 64,
-                  fit: BoxFit.cover,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(Dimens.dp50),
+                  child: state.user?.image != null
+                      ? Image.memory(
+                          ImageHelper.convertToUintList(
+                            state.user!.image,
+                          ),
+                          width: 64,
+                          height: 64,
+                          fit: BoxFit.cover,
+                        )
+                      : Image.network(
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYw9VnAJ0kwdAIfioIwBSutjqwtbXz_3thmMq7cExoivh4JlTd',
+                          width: 64,
+                          height: 64,
+                          fit: BoxFit.cover,
+                        ),
                 ),
               ),
               Dimens.dp16.width,
@@ -45,7 +57,9 @@ class _ProfileSection extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, ProfilePage.routeName);
+                },
                 icon: const Icon(AppIcons.edit),
                 color: context.theme.primaryColor,
               ),

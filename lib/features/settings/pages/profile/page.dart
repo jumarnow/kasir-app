@@ -22,6 +22,12 @@ class _ProfilePageState extends State<ProfilePage> {
   final TextEditingController phoneController = TextEditingController();
 
   @override
+  void initState() {
+    context.read<ProfileBloc>().add(GetProfileEvent());
+    super.initState();
+  }
+
+  @override
   void dispose() {
     nameController.dispose();
     emailController.dispose();
@@ -55,9 +61,7 @@ class _ProfilePageState extends State<ProfilePage> {
           padding: const EdgeInsets.all(Dimens.dp16),
           children: [
             const _ImageSection(),
-            Divider(
-              color: Colors.grey[300],
-            ),
+            const Divider(),
             RegularTextInput(
               controller: nameController,
               label: 'Nama Bisnis',
