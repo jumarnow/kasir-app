@@ -17,7 +17,11 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => BottomNavBloc()),
         BlocProvider(
-            create: (context) => ProfileBloc()..add(GetProfileEvent())),
+          create: (context) => ProfileBloc()..add(GetProfileEvent()),
+        ),
+        BlocProvider(
+          create: (context) => XenditBloc()..add(GetXenditEvent()),
+        ),
       ],
       child: MaterialApp(
         title: 'Kasir SUPER',
