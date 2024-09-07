@@ -1,7 +1,4 @@
-
-
 part of '../page.dart';
-
 
 class _DeviceSection extends StatelessWidget {
   @override
@@ -22,7 +19,9 @@ class _DeviceSection extends StatelessWidget {
         ItemMenuSettings(
           title: 'Atur Struk',
           icon: AppIcons.coupon,
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, StruckPage.routeName);
+          },
         ),
       ],
     );

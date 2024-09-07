@@ -4,6 +4,7 @@ import 'package:kasirsuper/core/core.dart';
 import 'package:kasirsuper/features/settings/settings.dart';
 
 import '../profile/page.dart';
+import '../struck/page.dart';
 part 'sections/profile_section.dart';
 part 'sections/other_section.dart';
 part 'sections/device_section.dart';

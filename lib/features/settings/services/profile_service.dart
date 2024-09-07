@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ProfileService {
   ProfileService._();
 
-  static Future<UserModel> insertProfile(UserModel user) async {
+  static Future<UserModel> insert(UserModel user) async {
     try {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('profile', jsonEncode(user.toJson()));
@@ -17,7 +17,7 @@ class ProfileService {
     }
   }
 
-  static Future<UserModel?> getProfile() async {
+  static Future<UserModel?> get() async {
     try {
       final prefs = await SharedPreferences.getInstance();
       final data = prefs.getString('profile');

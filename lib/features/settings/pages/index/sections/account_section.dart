@@ -17,9 +17,12 @@ class _AccountSection extends StatelessWidget {
             Navigator.pushNamed(context, ProfilePage.routeName);
           },
         ),
-        const ItemMenuSettings(
+        ItemMenuSettings(
           title: 'API Key Xendit',
           icon: AppIcons.creditCard,
+          onTap: () {
+            Navigator.pushNamed(context, XenditPage.routeName);
+          },
         ),
       ],
     );

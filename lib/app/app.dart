@@ -22,6 +22,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => XenditBloc()..add(GetXenditEvent()),
         ),
+        BlocProvider(
+          create: (context) => StruckBloc()..add(GetStruckEvent()),
+        ),
       ],
       child: MaterialApp(
         title: 'Kasir SUPER',

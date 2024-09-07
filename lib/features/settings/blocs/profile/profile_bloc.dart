@@ -13,7 +13,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       try {
         emit(state.copyWith(status: Status.loading));
 
-        final service = await ProfileService.getProfile();
+        final service = await ProfileService.get();
 
         emit(state.copyWith(status: Status.apply, user: service));
       } catch (e) {
@@ -24,7 +24,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       try {
         emit(state.copyWith(status: Status.loading));
 
-        final service = await ProfileService.insertProfile(UserModel(
+        final service = await ProfileService.insert(UserModel(
           name: event.name,
           email: event.email,
           phoneNumber: event.phoneNumber,
